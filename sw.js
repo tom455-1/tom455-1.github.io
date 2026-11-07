@@ -1,6 +1,6 @@
-// Biocell : réseau d'abord (les mises à jour arrivent tout de suite), cache si hors ligne.
-const CACHE = 'biocell-341198df7e';
-const FILES = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png', './apple-touch-icon.png'];
+// Mes cours : réseau d'abord (les mises à jour arrivent tout de suite), cache si hors ligne.
+const CACHE = 'cours-8c80601fe7';
+const FILES = ["./", "./index.html", "./biocell/", "./biocell/index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png"];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
@@ -20,11 +20,11 @@ self.addEventListener('fetch', e => {
       const timer = setTimeout(() => ctl.abort(), 4000);
       const res = await fetch(req, { signal: ctl.signal, cache: 'no-cache' });
       clearTimeout(timer);
-      if (res.ok) cache.put(req.mode === 'navigate' ? './' : req, res.clone());
+      if (res.ok) cache.put(req, res.clone());
       return res;
     } catch (_) {
       return (await cache.match(req, { ignoreSearch: true })) ||
-             (req.mode === 'navigate' ? await cache.match('./') : Response.error());
+             (req.mode === 'navigate' ? await cache.match(new URL('./', req.url).href) : Response.error());
     }
   })());
 });

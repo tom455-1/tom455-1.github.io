@@ -1,8 +1,8 @@
 {
- "name": "Biocell interactif",
- "short_name": "Biocell",
+ "name": "Mes cours",
+ "short_name": "Cours",
  "lang": "fr",
- "description": "Cours de Biologie cellulaire L1 relié aux schémas bilan",
+ "description": "Mes cours de L1, avec schémas interactifs",
  "start_url": "./",
  "scope": "./",
  "display": "standalone",
