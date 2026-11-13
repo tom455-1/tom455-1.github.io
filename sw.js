@@ -1,6 +1,6 @@
 // Mes cours : réseau d'abord (les mises à jour arrivent tout de suite), cache si hors ligne.
-const CACHE = 'cours-fe9b6f77b6';
-const FILES = ["./", "./index.html", "./biocell/", "./biocell/index.html", "./enregistrer/", "./enregistrer/index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png"];
+const CACHE = 'cours-3b1c32fc63';
+const FILES = ["./", "./index.html", "./maths/", "./maths/index.html", "./physique/", "./physique/index.html", "./chimie/", "./chimie/index.html", "./zoologie/", "./zoologie/index.html", "./botanique/", "./botanique/index.html", "./biocell/", "./biocell/index.html", "./biomol/", "./biomol/index.html", "./biochimie/", "./biochimie/index.html", "./etudiant/", "./etudiant/index.html", "./enregistrer/", "./enregistrer/index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png"];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));
