@@ -1,5 +1,5 @@
 // Mes cours : réseau d'abord (les mises à jour arrivent tout de suite), cache si hors ligne.
-const CACHE = 'cours-a73115d2bf';
+const CACHE = 'cours-fe9b6f77b6';
 const FILES = ["./", "./index.html", "./biocell/", "./biocell/index.html", "./enregistrer/", "./enregistrer/index.html", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png", "./apple-touch-icon.png"];
 
 self.addEventListener('install', e => {
